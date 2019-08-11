@@ -28,6 +28,9 @@ mount_removable=0
 * run `sudo chmod -R 777 /media/DEF`
 * Test the disk is writtable: `echo “test” > /media/DEF foo.txt`
 
+If after a reboot you face some errors such as "device is read-only" or something among those lines, run this command, reboot and try again:
+`sudo fsck.hfsplus /dev/sda2`.
+
 ## Install SAMBA
 * `sudo apt-get install samba samba-common-bin`
 * Backup the original config file before making any changes: `sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bkup`
