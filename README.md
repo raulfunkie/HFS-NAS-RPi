@@ -10,7 +10,8 @@ First we need to disable automount in `pcmanfm.conf`:
 * `sudo nano pcmanfm.conf`
 ```[volume]
 mount_on_startup=0
-mount_removable=0```
+mount_removable=0
+```
 * Save and exit (ctrl+X > Y > Enter)
 
 ## Mount the correct HFS+ partition
@@ -38,7 +39,8 @@ valid users = @users
 force group = users
 create mask = 0660
 directory mask = 0771
-read only = no```
+read only = no
+```
 * Save your changes (ctrl+X > Y > enter)
 * Restart SAMBA: `sudo /etc/init.d/samba restart`
 
