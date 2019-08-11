@@ -25,8 +25,8 @@ mount_removable=0
 * Mount the drive `sudo mount -t hfsplus -o force,rw /dev/sda1 /media/DEF`
 * Now that the drive is mounted, let's make sure the RPi mounts it everytime it boots. Let's do `sudo nano /etc/fstab`
 * Add a new line to fstab: `UUID="175bce55-43ef-32d6-adca-ce3fa28945fb"     /media/DEF      hfsplus uid=1000,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=1ms,force,rw      0       0`
-* run `sudo chmod -R 777 /media/FolderName`
-* Test the disk is writtable: `echo “test” > /media/newMountFolder foo.txt`
+* run `sudo chmod -R 777 /media/DEF`
+* Test the disk is writtable: `echo “test” > /media/DEF foo.txt`
 
 ## Install SAMBA
 * `sudo apt-get install samba samba-common-bin`
