@@ -8,7 +8,8 @@ These main steps are taken from [this guide](https://sammit.net/how-to-make-a-ra
 First we need to disable automount in `pcmanfm.conf`:
 * `cd ~/.config/pcmanfm/LXDE-pi/`
 * `sudo nano pcmanfm.conf`
-```[volume]
+```
+[volume]
 mount_on_startup=0
 mount_removable=0
 ```
@@ -33,7 +34,8 @@ mount_removable=0
 * `sudo nano /etc/samba/smb.conf`
 * Remove the "#" symbol from the line `security = user`. (If it's not there, then just add it.)
 * Go to the bottom of the config file and add your share details:
-```[ShareName] comment = Raspberry Pi NAS
+```
+[ShareName] comment = Raspberry Pi NAS
 path = /media/DEF/
 valid users = @users
 force group = users
