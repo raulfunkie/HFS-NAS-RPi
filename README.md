@@ -22,6 +22,9 @@ mount_removable=0
 * Create a directory to mount the drive to. In my case I use DEF: `sudo mkdir /media/DEF`
 * Make sure the drive is detected, run `sudo fdisk -l`
 * Check which partition is the correct one to mount: `sudo gdisk -l /dev/sda`
+* The partition to mount in my case is `/dev/sda1`
+* Find the UUID of your drive: `sudo blkid`
+* Copy the UUID, in my case it is: `175bce55-43ef-32d6-adca-ce3fa28945fb`
 * Mount the drive `sudo mount -t hfsplus -o force,rw /dev/sda1 /media/DEF`
 * Now that the drive is mounted, let's make sure the RPi mounts it everytime it boots. Let's do `sudo nano /etc/fstab`
 * Add a new line to fstab: `UUID="175bce55-43ef-32d6-adca-ce3fa28945fb"     /media/DEF      hfsplus uid=1000,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=1ms,force,rw      0       0`
