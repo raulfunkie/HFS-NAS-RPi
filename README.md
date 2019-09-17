@@ -33,7 +33,7 @@ mount_removable=0
 * Test if the disk is writtable: `echo “test” > /media/DEF foo.txt`
 
 If after a reboot you face some errors such as "device is read-only" or something among those lines, run this command, reboot and try again:
-`sudo fsck.hfsplus /dev/sda2`.
+`sudo fsck.hfsplus /dev/sda1`.
 
 ## Install SAMBA
 * `sudo apt-get install samba samba-common-bin`
