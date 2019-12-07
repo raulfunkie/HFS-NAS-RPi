@@ -30,7 +30,7 @@ mount_removable=0
 * Add a new line to fstab: `UUID="175bce55-43ef-32d6-adca-ce3fa28945fb"     /media/DEF      hfsplus uid=1000,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=1ms,force,rw      0       0`
 * Save and Exit (<kbd>ctrl</kbd> + <kbd>X</kbd> > <kbd>Y</kbd> > <kbd>Enter</kbd>)
 * run `sudo chmod -R 777 /media/DEF`
-* Test if the disk is writtable: `echo “test” > /media/DEF foo.txt`
+* Test if the disk is writtable: `if [ -w "/path/to/dir" ]; then echo "WRITABLE"; else echo "NOT WRITABLE"; fi`
 
 If after a reboot you face some errors such as "device is read-only" or something among those lines, run this command, reboot and try again:
 `sudo fsck.hfsplus /dev/sda1`.
